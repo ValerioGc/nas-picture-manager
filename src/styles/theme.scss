@@ -1,0 +1,39 @@
+:root {
+  color-scheme: dark;
+  --theme-background: var(--nas-background, #202124);
+  --theme-foreground: var(--nas-foreground, #eeeff2);
+  --surface: var(--nas-surface, #2b2c30);
+  --surface-soft: var(--nas-sunken, #36373c);
+  --surface-hover: var(--nas-hover, #41434a);
+  --muted: var(--nas-muted, #a2a5af);
+  --border: var(--nas-border, #ffffff12);
+  --accent: var(--nas-accent, #a9ccff);
+  --accent-soft: #375273;
+  --on-accent: #16243a;
+  --danger: #ffb4ad;
+  --danger-soft: #ffb4ad14;
+  --checker: #ffffff07;
+  --crop-mask: #0008;
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+  --theme-background: var(--nas-background, #f0f1f4);
+  --theme-foreground: var(--nas-foreground, #24262d);
+  --surface: var(--nas-surface, #fafbfd);
+  --surface-soft: var(--nas-sunken, #eceef3);
+  --surface-hover: var(--nas-hover, #e0e4ed);
+  --muted: var(--nas-muted, #646977);
+  --border: var(--nas-border, #171d2914);
+  --accent: var(--nas-accent, #265da7);
+  --accent-soft: #dae9ff;
+  --on-accent: #ffffff;
+  --danger: #ae2633;
+  --danger-soft: #ae263310;
+  --checker: #11111106;
+}
+
+body {
+  background: var(--nas-app-background, var(--theme-background));
+  color: var(--theme-foreground);
+}

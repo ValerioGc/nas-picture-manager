@@ -1,0 +1,15 @@
+node_modules/
+dist/
+backend/target/
+coverage/
+release-assets/
+build-reports/
+test-results/
+.playwright-results/
+package-lock.json
+pnpm-lock.yaml
+pnpm-workspace.yaml
+*.vue
+src/tests/e2e/.features-gen/
+src/tests/e2e/allure-results/
+src/tests/e2e/allure-report/
