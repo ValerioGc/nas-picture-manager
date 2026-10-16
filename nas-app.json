@@ -3,7 +3,7 @@
   "app": {
     "id": "nas-picture-manager",
     "name": "Picture Manager",
-    "version": "0.1.14",
+    "version": "0.1.15",
     "icon": "icon.svg",
     "category": "media",
     "system": false
