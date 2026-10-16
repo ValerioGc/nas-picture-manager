@@ -36,8 +36,8 @@ dist/assets/...
 and assembles the frontend bundle as `dist/` in the archive. `pnpm run nas:test` checks
 installability, API and version on the Unix socket from a directory outside the checkout.
 
-The scripts in `scripts/axium/` are the same as in the other applications, with the Cargo manifest
-adapted to the single crate. The versions of package.json, NAS manifest, Cargo and Sonar must
+Packaging and package checks come from `nas-base-app` (`@valeriogc/nas-base-app`), as in the
+other applications, with the Cargo manifest of the single crate. The versions of package.json, NAS manifest, Cargo and Sonar must
 match. The pipeline produces only the Linux NAS package and its checksum.
 
 ## Execution and catalogue
@@ -115,14 +115,15 @@ parameters remain available.
 
 ## Reusable installability test
 
-The file **`scripts/axium/test-nas-package.mjs` is self-contained**: copy it into any other project,
-without importing files of nas-picture-manager. It requires only **Node.js 22.18+**, uses the
+The package test is `scripts/axium/test-nas-package.mjs` of `@valeriogc/nas-base-app`, run by
+`nas-base-app test-package` (and by `pnpm run nas:test` through `nas-base-app smoke`). The file
+is self-contained and imports nothing of nas-picture-manager. It requires only **Node.js 22.18+**, uses the
 built-in modules and needs no `npm install`. The `.mjs` extension lets it run outside a Node
 project as well. The start test requires Linux with `/proc` reachable and a binary compatible with
 the machine. Running the test needs no root, launcher, Python, Cargo or tar command.
 
 ```bash
-node scripts/axium/test-nas-package.mjs \
+pnpm exec nas-base-app test-package \
   release-assets/nas-picture-manager-0.1.4-linux-x64.tar.gz \
   --expected-id nas-picture-manager \
   --expected-version v0.1.4 \
@@ -172,13 +173,7 @@ temporary directory is no security sandbox. The test runs no JavaScript in the b
 check the installation through the launcher API and certifies no hardware other than the machine
 it runs on.
 
-The regression tests of the script also cover faulty packages:
-
-```bash
-pnpm run test:unit
-# or, without npm:
-node --test src/tests/scripts/axium/*.test.mjs
-```
+The regression tests of the script, faulty packages included, live in the library.
 
 ## Quality gate and release
 
