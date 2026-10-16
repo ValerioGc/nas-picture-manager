@@ -3,7 +3,7 @@ const it = {
   'viewer.open': 'Apri file',
   'viewer.pickerUnavailable':
     'Impossibile sfogliare i file del NAS. È necessario Explorer installato e disponibile.',
-  'viewer.empty.drop': 'Le immagini si aprono con il pulsante o trascinandole qui.',
+  'viewer.empty.drop': 'È possibile aprire le immagini con il pulsante o trascinandole qui.',
   'viewer.empty.title': 'Nessuna immagine aperta',
   'viewer.previous': 'Immagine precedente',
   'viewer.next': 'Immagine successiva',

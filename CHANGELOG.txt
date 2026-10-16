@@ -2,6 +2,13 @@
 
 All notable changes to nas-picture-manager are documented in this file.
 
+## [Unreleased]
+
+### Changed
+
+- The text of the empty viewer reads "È possibile aprire le immagini con il pulsante o
+  trascinandole qui.".
+
 ## [0.1.15]
 
 ### Changed
