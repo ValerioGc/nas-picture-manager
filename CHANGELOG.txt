@@ -2,7 +2,7 @@
 
 All notable changes to nas-picture-manager are documented in this file.
 
-## [Unreleased]
+## [0.1.17]
 
 ### Security
 
