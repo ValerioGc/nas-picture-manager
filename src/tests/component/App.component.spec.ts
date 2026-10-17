@@ -87,7 +87,7 @@ describe('App', () => {
     });
     document.dispatchEvent(new KeyboardEvent('keydown', { key: 'o', ctrlKey: true }));
     await flushPromises();
-    expect(wrapper.get('[role="alert"]').text()).toContain('Explorer');
+    expect(wrapper.get('[role="alert"]').text()).toContain('app File');
     expect(wrapper.get('[data-testid="picture"]').attributes('src')).toBe(previous);
     expect(viewer.imageReady).toBe(true);
     wrapper.unmount();

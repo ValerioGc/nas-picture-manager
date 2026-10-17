@@ -72,7 +72,7 @@ The initial catalogue of the launcher includes this entry for `ValerioGc/nas-pic
 ```json
 {
   "id": "nas-picture-manager",
-  "name": "Picture Manager",
+  "name": "Immagini",
   "info": "Visualizza e modifica immagini.",
   "provider": "github",
   "repository": "ValerioGc/nas-picture-manager",

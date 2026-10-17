@@ -1,8 +1,8 @@
 const en = {
-  'viewer.title': 'Picture Manager',
+  'viewer.title': 'Pictures',
   'viewer.open': 'Open file',
   'viewer.pickerUnavailable':
-    'Unable to browse NAS files. Explorer has to be installed and available.',
+    'Unable to browse NAS files. The Files app has to be installed and available.',
   'viewer.empty.drop': 'Images open with the button or by dropping them here.',
   'viewer.empty.title': 'No image open',
   'viewer.previous': 'Previous image',

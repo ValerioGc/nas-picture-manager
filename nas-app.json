@@ -2,7 +2,7 @@
   "manifest_version": 1,
   "app": {
     "id": "nas-picture-manager",
-    "name": "Picture Manager",
+    "name": "Immagini",
     "version": "0.1.16",
     "icon": "icon.svg",
     "category": "media",

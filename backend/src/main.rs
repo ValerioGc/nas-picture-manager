@@ -1,3 +1,4 @@
+mod launcher_only;
 use std::{ffi::OsString, io, path::PathBuf};
 
 mod unix_socket;
@@ -96,7 +97,7 @@ async fn main() -> io::Result<()> {
     let app = nas_picture_manager_axum::build_router_with_ui(ui_directory()?);
     let (listener, _cleanup) = unix_socket::bind(&socket).await?;
     println!("nas-picture-manager listening on {}", socket.display());
-    axum::serve(listener, app)
+    axum::serve(launcher_only::LauncherOnly::new(listener), app)
         .with_graceful_shutdown(shutdown_signal())
         .await
 }

@@ -2,6 +2,19 @@
 
 All notable changes to nas-picture-manager are documented in this file.
 
+## [Unreleased]
+
+### Security
+
+- The socket of the app answers the launcher only (root, the owner of the folder of the sockets, or
+  the app itself): another app of the NAS can no longer reach its API with headers it made up
+  (`launcher_only.rs`).
+
+### Changed
+
+- The app is called "Immagini" ("Pictures" in English) instead of "Picture Manager", and it names
+  the app File instead of Explorer.
+
 ## [0.1.16]
 
 ### Changed

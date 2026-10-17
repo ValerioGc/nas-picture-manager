@@ -112,7 +112,7 @@ Then('the NAS image stays open without an error', async ({ page }) => {
 
 Then('an Explorer error is shown and the NAS image stays open', async ({ page }) => {
   const viewer = page.frameLocator('iframe');
-  await expect(viewer.getByRole('alert')).toContainText('Explorer');
+  await expect(viewer.getByRole('alert')).toContainText('Files app');
   await expect(viewer.getByTestId('picture')).toHaveAttribute('alt', 'palette.png');
   await expect(viewer.getByTestId('file_input')).toHaveCount(0);
 });

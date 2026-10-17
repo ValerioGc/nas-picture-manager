@@ -1,8 +1,8 @@
 const it = {
-  'viewer.title': 'Picture Manager',
+  'viewer.title': 'Immagini',
   'viewer.open': 'Apri file',
   'viewer.pickerUnavailable':
-    'Impossibile sfogliare i file del NAS. È necessario Explorer installato e disponibile.',
+    'Impossibile sfogliare i file del NAS. È necessaria l’app File installata e disponibile.',
   'viewer.empty.drop': 'È possibile aprire le immagini con il pulsante o trascinandole qui.',
   'viewer.empty.title': 'Nessuna immagine aperta',
   'viewer.previous': 'Immagine precedente',
