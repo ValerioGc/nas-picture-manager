@@ -1,0 +1,82 @@
+@use './variables' as *;
+
+%truncated_text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+%centered_identity {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  pointer-events: none;
+}
+
+%fx_base {
+  display: flex;
+  align-items: center;
+}
+
+%fx_between_center {
+  @extend %fx_base;
+  justify-content: space-between;
+}
+
+%icon_button {
+  display: grid;
+  place-items: center;
+  width: $control_size;
+  height: $control_size;
+}
+
+%selected_control {
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+
+%menu_action {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: $space_3;
+  padding: $space_3;
+  text-align: left;
+}
+
+%shortcut_key {
+  font-family: inherit;
+  font-size: $font_small;
+  color: var(--muted);
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+%menu_section {
+  display: grid;
+  gap: $space_3;
+  margin-top: $space_2;
+  padding: $space_3;
+  border-top: $border_width solid var(--border);
+}
+
+%muted_label {
+  color: var(--muted);
+  font-size: $font_small;
+}
+
+%hint {
+  @extend %muted_label;
+  line-height: 1.7;
+}
+
+%popup_surface {
+  padding: $space_2;
+  border: $border_width solid var(--border);
+  border-radius: $radius_medium;
+  background: var(--surface);
+  box-shadow: $shadow_popup;
+}

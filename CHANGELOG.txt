@@ -1,0 +1,148 @@
+# Changelog
+
+All notable changes to nas-picture-manager are documented in this file.
+
+## [Unreleased]
+
+### Changed
+
+- Development dependencies updated as Dependabot proposed (Vite 8.3.4, Vitest 5.0.4, Playwright 1.64,
+  ESLint 10.12, Prettier 3.9.10, postcss-combine-duplicated-selectors 11 and the others), TypeScript
+  kept at 6.0.3; in the pipelines actions/setup-node 7.1.0, upload-artifact 7.0.2 and
+  download-artifact 8.0.2; serde_json 1.0.154, tokio 1.53.3 and hyper 1.12.0.
+
+## [0.1.17]
+
+### Security
+
+- The socket of the app answers the launcher only (root, the owner of the folder of the sockets, or
+  the app itself): another app of the NAS can no longer reach its API with headers it made up
+  (`launcher_only.rs`).
+
+### Changed
+
+- The app is called "Immagini" ("Pictures" in English) instead of "Picture Manager", and it names
+  the app File instead of Explorer.
+
+## [0.1.16]
+
+### Changed
+
+- The text of the empty viewer reads "È possibile aprire le immagini con il pulsante o
+  trascinandole qui.".
+
+## [0.1.15]
+
+### Changed
+
+- Maintenance release.
+
+## [0.1.14]
+
+### Changed
+
+- Maintenance release.
+
+## [0.1.13]
+
+### Changed
+
+- The texts of the interface, in Italian and English, are impersonal and shorter: no ellipsis,
+  colon or semicolon, no names of internal programs, commands or variables.
+- The scrollbars come from the shared library, which shows only their thumb: no arrows and no
+  track.
+
+### Removed
+
+- Comments that only named the markup below them.
+
+## [0.1.12]
+
+### Changed
+
+- The files of `assets/`, with a hash of their content in the name, are served with
+  `Cache-Control: public, max-age=31536000, immutable`, the page with `no-cache`: the browser keeps
+  the scripts and the styles between visits instead of asking for them again through the gateway
+  and the launcher.
+- The iframe guard, the NAS palette and the build, package and release scripts come from the
+  shared library `@valeriogc/nas-base-app`; the viewer theme and the launcher context stay here.
+
+## [0.1.11]
+
+### Changed
+
+- In the frame of the launcher the application keeps the rules of its old sandbox by itself
+  (`src/services/frameGuard.ts`, called first in `main.ts`): no window of its own, no
+  `alert`/`confirm`/`prompt` dialog, no navigation of the page that holds it. The launcher dropped
+  the sandbox, which on its origin was no wall and made the browser warn: nothing else changes.
+
+## [0.1.10]
+
+### Changed
+
+- Maintenance release.
+
+## [0.1.9]
+
+### Changed
+
+- Maintenance release.
+
+## [0.1.8]
+
+### Changed
+
+- Maintenance release.
+
+## [0.1.7]
+
+### Changed
+
+- Maintenance release.
+
+## [0.1.6]
+
+### Changed
+
+- Maintenance release.
+
+## [0.1.5]
+
+### Changed
+
+- Maintenance release.
+
+## [0.1.4]
+
+### Changed
+
+- Maintenance release.
+
+## [0.1.3]
+
+### Changed
+
+- Bump the cargo group across 1 directory with 2 updates.
+- Bump the npm group across 1 directory with 10 updates.
+- Bump the actions group across 1 directory with 5 updates.
+
+## [0.1.2]
+
+### Added
+
+- Publish release tag atomically.
+
+### Fixed
+
+- Use product name for releases.
+
+## [0.1.1]
+
+### Added
+
+- Initial desktop and browser image viewer with editing and NAS packaging.
+
+### Changed
+
+- Share viewer state across Vue components and remove redundant styling and comments.
+- Run release quality checks and NAS installability tests locally before tagging.
