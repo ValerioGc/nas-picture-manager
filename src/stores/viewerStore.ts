@@ -15,7 +15,7 @@ export const useViewerStore = defineStore('viewer', () => {
   const imageReady = computed(
     () => Boolean(viewer.info.value && displayedPreview.value) && !viewer.loading.value,
   );
-  
+
   const zoom = ref<Zoom>('fit');
 
   const leaveConfirmation = ref(false);

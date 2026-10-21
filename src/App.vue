@@ -38,7 +38,7 @@ async function openLinkedImage() {
   if (!path?.startsWith('/') || path.length > 2048) {
     return;
   }
-  
+
   try {
     const response = await fetch(
       `/apps/nas-file-manager/api/downloads?path=${encodeURIComponent(path.slice(1))}`,

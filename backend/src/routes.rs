@@ -68,7 +68,7 @@ async fn security_headers(request: Request, next: Next) -> Response {
     } else {
         None
     };
-    
+
     let succeeded = response.status().is_success();
     let headers = response.headers_mut();
     if let Some(cache) = cache.filter(|_| succeeded) {
