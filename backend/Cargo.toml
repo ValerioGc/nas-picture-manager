@@ -5,6 +5,7 @@ edition = "2021"
 autotests = false
 
 [dependencies]
+nas-app-core = { git = "https://github.com/ValerioGc/nas-app-core", tag = "v0.1.0" }
 axum = "0.8"
 image = { version = "0.25", default-features = false, features = ["png", "jpeg", "gif", "webp", "bmp", "tiff", "ico"] }
 serde = { version = "1", features = ["derive"] }

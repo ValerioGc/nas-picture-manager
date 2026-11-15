@@ -121,17 +121,12 @@ validates chunks and the metadata budget before the codec. No filesystem path co
 endpoints and no error exposes details of the system. UI and API apply a CSP; image answers use
 `no-store` and `nosniff`.
 
-## Dependencies and lockfiles
+## Dependencies and shared library
 
-Locally dependencies are installed with pnpm; the pipelines use `npm ci`. `pnpm install` realigns
-`package-lock.json` through `postinstall`; after `pnpm add`, `update` or `remove` run
-`pnpm run lock:npm`. `lint` checks the alignment and `release:merge` repeats it before the quality
-gate. Do not edit the lockfiles by hand: the npm lock changes through `lock:npm`, `Cargo.lock`
-through Cargo. `pnpm-lock.yaml` stays local.
-
-## Shared library
-
-The launcher bridge, styles, shared components and helpers, and the build, package and release scripts come from `@valeriogc/nas-base-app`, published on GitHub Packages; the commands of `package.json` use its `nas-base-app`. The `.npmrc` of the project points the `@valeriogc` scope to its registry; locally a classic token with `read:packages` is needed in your own `~/.npmrc` (`//npm.pkg.github.com/:_authToken=...`), while the pipelines use the token of the workflow. For a new version of the library, update the number in `package.json` and run `pnpm install`. The local `pnpm-workspace.yaml` has `'@valeriogc/nas-base-app': false` under `allowBuilds`.
+Dependencies, lockfiles and the use of `@valeriogc/nas-base-app` follow the section "For the
+applications" of `DEVELOPMENT.md` in nas-base-app. In short, run `pnpm run lock:npm` after
+`pnpm add`, `update` or `remove`, and keep a token with `read:packages` in `~/.npmrc` to install
+the library.
 
 ## Checks
 

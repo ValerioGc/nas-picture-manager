@@ -10,6 +10,8 @@ export default tseslint.config(
       'backend',
       '.claude',
       'src/tests/e2e/.features-gen',
+      'src/tests/e2e/allure-results',
+      'src/tests/e2e/allure-report',
       'test-results',
       'coverage',
       'release-assets',
